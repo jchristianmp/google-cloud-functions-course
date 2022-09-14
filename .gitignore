@@ -1,4 +1,4 @@
 .idea/
 venv/
-pip/
-get-pip.py/
+pip
+get-pip.py
