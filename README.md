@@ -32,3 +32,5 @@ Si solicita actualizacion de paquete pip, usar el siguiente comando
 ```
 python.exe -m pip install --upgrade pip
 ```
+
+Acutalización

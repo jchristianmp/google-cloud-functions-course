@@ -7,7 +7,9 @@ def hello_world(request):
     elif request_json and 'name' in request_json and 'lastname' in request_json:
         name = request_json['name']
         lastname = request_json['lastname']
+    
     else:
+
         name='World'
         lastname = ''
     return f'Hello {name} {lastname}'
