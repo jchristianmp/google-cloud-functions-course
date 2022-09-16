@@ -4,6 +4,17 @@ def send_email(request):
     from sendgrid.helpers.mail import Mail
     from flask import abort
 
+    passwordApiKey='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'
+    access_token = '94df97cf211c5a02d3a4b93e0ab5838e'
+
+    if request.method != 'POST':
+        abort(405)
+
+    bearer_token = request.headers.get('Authorization').split()[1]
+    
+    if bearer_token!= access_token:
+        abort(401)
+        
     request_json=request.get_json(silent=True)
     parameters=('sender','receiver','subject','message')
     sender,receiver, subject, message = '','','',''
@@ -17,11 +28,12 @@ def send_email(request):
     message = Mail(
         from_email=sender,
         to_emails=receiver,
-        subjet=subject,
+        subject=subject,
         html_content=message
     )
     try:
-        sg=SendGridAPIClient(os.getenv('passwordApiKey'))
+        #sg=SendGridAPIClient(os.environ.get('passwordApiKey'))
+        sg=SendGridAPIClient(passwordApiKey)
         response = sg.send(message)
         return 'OK',200
     

@@ -2,3 +2,4 @@
 venv/
 pip
 get-pip.py
+.env

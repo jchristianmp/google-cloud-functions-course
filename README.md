@@ -150,3 +150,9 @@ gcloud functions deploy [nombre_funcion] --runtime python[version] --trigger-htt
 Una vez cargado, podemos acceder a la función seleccionando el URL que nos genera, ejemplo https://us-central1-cloud-function-curso.cloudfunctions.net/hello_world
 
 Para subir todo al repositorio, debemos regresar a la raiz del cporyecto con cd..
+
+
+## Para Correr una función por terminal
+```
+functions-framework --target [nombre_funcion] --debug
+```
