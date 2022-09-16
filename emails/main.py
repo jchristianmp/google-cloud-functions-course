@@ -4,7 +4,7 @@ def send_email(request):
     from sendgrid.helpers.mail import Mail
     from flask import abort
 
-    passwordApiKey='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'
+    
     access_token = '94df97cf211c5a02d3a4b93e0ab5838e'
 
     if request.method != 'POST':
